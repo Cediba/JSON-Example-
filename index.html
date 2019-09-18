@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Cedric Balmer">
+    <meta name="description" content="JSON Example">
+    <title>JavaScript - read JSON from URL</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+    <div class="myPanel"></div>
+
+    <script>
+        $.getJSON('http://time.jsontest.com',function(data){
+
+            var text = `Date: ${data.date}<br>
+            Time: ${data.time}<br>
+            Unix time: ${data.milliseconds_since_epoch}`
+
+            $(".myPanel").html(text);
+
+        });
+            
+    </script>
+
+
+    
+</body>
+</html>
